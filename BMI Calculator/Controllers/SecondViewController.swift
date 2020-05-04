@@ -11,18 +11,26 @@ import UIKit
 class SecondViewController: UIViewController {
 
     var bmiValue: String?
+    var tips: String?
+    var color: UIColor?
     
     @IBOutlet weak var labelBMIValue: UILabel!
     @IBOutlet weak var labelTips: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        labelBMIValue.text = bmiValue
+        
+        updateUI()
     }
     
     @IBAction func recalculatePressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateUI() {
+        labelBMIValue.text = bmiValue
+        labelTips.text = tips
+        view.backgroundColor = color
     }
     
 }
